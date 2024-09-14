@@ -1,4 +1,4 @@
-# yijia_ids706_miniProj1
+# yijia_ids706_miniProj2
 
 ## Python Template
 
@@ -15,7 +15,7 @@ This project is a Python project skeleton that includes a development container 
 ### 1. Clone the Repository
 
 ```bash
-git clone git@github.com:nogibjj/yijia_ids706_miniProj1.git
+git clone git@github.com:nogibjj/yijia_ids706_miniProj2.git
 ```
 
 ### 2. Open the Repository in Visual Studio Code

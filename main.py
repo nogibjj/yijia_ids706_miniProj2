@@ -8,17 +8,19 @@ def load_data(filepath):
     """Load data from a CSV file."""
     return pd.read_csv(filepath)
 
+
 def calculate_statistics(data):
     """Calculate mean, median, and standard deviation for selected columns."""
     selected_columns = ['Temperature Minimum', 'Temperature Maximum', 'Precipitation']
     data = data[selected_columns]
-    
+
     stats = {
         "mean": data.mean(),
         "median": data.median(),
         "std_dev": data.std(),
     }
-    return pd.DataFrame(stats).T  
+    return pd.DataFrame(stats).T
+
 
 def create_histogram(data, column, filepath):
     """Generate a histogram for the specified column and save it."""
@@ -31,6 +33,7 @@ def create_histogram(data, column, filepath):
     plt.savefig(filepath)
     plt.close()
 
+
 def generate_profile_report(data, output_path_html, output_path_md=None, output_path_pdf=None):
     """Generate a profiling report using ydata_profiling and convert to Markdown or PDF."""
     # Generate HTML report
@@ -41,12 +44,3 @@ def generate_profile_report(data, output_path_html, output_path_md=None, output_
     if output_path_md:
         pypandoc.convert_file(output_path_html, 'md', outputfile=output_path_md)
         print(f"Markdown report saved to {output_path_md}")
-
-# def generate_md_report(stats, image_path):
-#     """Generate a markdown report with the descriptive statistics and an image."""
-#     with open("summary_report.md", "w") as file:
-#         file.write("# Summary Report\n\n")
-#         file.write("## Descriptive Statistics\n\n")
-#         file.write(stats.to_markdown())
-#         file.write("\n\n")
-#         file.write(f"![Temperature Distribution]({image_path})\n")
