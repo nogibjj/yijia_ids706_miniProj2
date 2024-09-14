@@ -2,7 +2,8 @@
 
 ## Python Template
 
-This project is a Python project skeleton that includes a development container setup, a Makefile, and CI/CD workflows using GitHub Actions.
+This project provides a Python-based framework designed to generate descriptive statistics and visualizations from datasets, with integrated CI/CD capabilities using GitHub Actions.
+
 
 ## File Structure
 
@@ -36,6 +37,7 @@ make install
 - make lint: Lints Python files using Pylint, ignoring specific patterns.
 - make test: Runs tests using pytest and generates a coverage report.
 - make clean: Removes pytest cache.
+- make generate_profile_report: Generates a profiling report in HTML and Markdown formats.
 
 ## CI/CD Setup
 - Location: .github/workflows/
@@ -43,3 +45,6 @@ make install
 
 ## CI/CD Badge
 [![CI](https://github.com/nogibjj/yijia_ids706_miniProj1/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/yijia_ids706_miniProj1/actions/workflows/hello.yml)
+
+## Summary Report Generation
+The CI/CD pipeline generates a Markdown report during its runtime using the profiling capabilities of ydata_profiling and Pandas. The generated report includes descriptive statistics and visualizations, which are committed and pushed back to the repository.

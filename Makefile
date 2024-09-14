@@ -17,7 +17,7 @@ generate_profile_report:
 	python -c "from main import load_data, generate_profile_report; \
 	data = load_data('rdu-weather-history.csv'); \
 	generate_profile_report(data, 'profile_report.html', 'profile_report.md')"
-	
+
    # Git commands to add, commit, and push the report
 	@if [ -n "$$(git status --porcelain)" ]; then \
 	    git config --local user.email "action@github.com"; \
@@ -28,6 +28,5 @@ generate_profile_report:
 	else \
 	    echo "No changes to commit."; \
 	fi
-
 
 all: install format lint test generate_profile_report
