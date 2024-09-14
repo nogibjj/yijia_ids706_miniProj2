@@ -42,7 +42,7 @@ make install
 - make lint: Lints Python files using Pylint, ignoring specific patterns.
 - make test: Runs tests using pytest and generates a coverage report.
 - make clean: Removes pytest cache.
-- generate_report: Generates a profiling report in HTML and Markdown formats. ( Use in CICD)
+- make generate_profile_report: Generates a profiling report in HTML and Markdown formats during CI/CD.
 
 ## CI/CD Setup
 - Location: .github/workflows/
