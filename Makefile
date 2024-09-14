@@ -19,13 +19,13 @@ generate_report:
 	stats = calculate_statistics(data); \
 	create_histogram(data, 'Temperature Minimum', 'temperature_minimum_distribution.png'); \
 	generate_md_report(stats, ['temperature_minimum_distribution.png'], 'summary_report.md')"
-
-	# Git commands to add, commit, and push the report
+	
+   # Git commands to add, commit, and push the report and PNG files
 	@if [ -n "$$(git status --porcelain)" ]; then \
 	    git config --local user.email "action@github.com"; \
 	    git config --local user.name "GitHub Action"; \
 	    git add summary_report.md temperature_minimum_distribution.png; \
-	    git commit -m 'Add generated markdown report'; \
+	    git commit -m 'Add generated markdown report and histogram image'; \
 	    git push; \
 	else \
 	    echo "No changes to commit."; \
