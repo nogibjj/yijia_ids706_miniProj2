@@ -15,5 +15,5 @@ uvicorn==0.18.3
 # Data processing and visualization
 matplotlib>=3.0 
 pandas>=1.0
-ydata-profiling
+tabulate
 pypandoc
