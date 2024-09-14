@@ -44,7 +44,7 @@ make install
 - Description: Contains GitHub Actions workflows for CI/CD, which automatically run setup, lint, and test actions on pushes to the GitHub repository.
 
 ## CI/CD Badge
-[![CI](https://github.com/nogibjj/yijia_ids706_miniProj1/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/yijia_ids706_miniProj1/actions/workflows/hello.yml)
+[![CI](https://github.com/nogibjj/yijia_ids706_miniProj2/actions/workflows/hello.yml/badge.svg)](https://github.com/nogibjj/yijia_ids706_miniProj2/actions/workflows/hello.yml)
 
 ## Summary Report Generation
 The CI/CD pipeline generates a Markdown report during its runtime using the profiling capabilities of ydata_profiling and Pandas. The generated report includes descriptive statistics and visualizations, which are committed and pushed back to the repository.

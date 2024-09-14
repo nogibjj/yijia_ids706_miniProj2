@@ -1,4 +1,0 @@
-# Summary Report
-
-## Descriptive Statistics
-

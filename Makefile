@@ -13,20 +13,22 @@ test:
 clean:
 	rm -rf .pytest_cache
 
-generate_profile_report:
-	python -c "from main import load_data, generate_profile_report; \
+generate_report:
+	python -c "from main import load_data, calculate_statistics, create_histogram, generate_md_report; \
 	data = load_data('rdu-weather-history.csv'); \
-	generate_profile_report(data, 'profile_report.html', 'profile_report.md')"
+	stats = calculate_statistics(data); \
+	create_histogram(data, 'Temperature Minimum', 'temperature_minimum_distribution.png'); \
+	generate_md_report(stats, ['temperature_minimum_distribution.png'], 'summary_report.md')"
 
-   # Git commands to add, commit, and push the report
+	# Git commands to add, commit, and push the report
 	@if [ -n "$$(git status --porcelain)" ]; then \
 	    git config --local user.email "action@github.com"; \
 	    git config --local user.name "GitHub Action"; \
-	    git add profile_report.md; \
+	    git add summary_report.md; \
 	    git commit -m 'Add generated markdown report'; \
 	    git push; \
 	else \
 	    echo "No changes to commit."; \
 	fi
 
-all: install format lint test generate_profile_report
+all: install format lint test generate_report
