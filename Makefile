@@ -24,7 +24,7 @@ generate_report:
 	@if [ -n "$$(git status --porcelain)" ]; then \
 	    git config --local user.email "action@github.com"; \
 	    git config --local user.name "GitHub Action"; \
-	    git add summary_report.md; \
+	    git add summary_report.md temperature_minimum_distribution.png; \
 	    git commit -m 'Add generated markdown report'; \
 	    git push; \
 	else \
